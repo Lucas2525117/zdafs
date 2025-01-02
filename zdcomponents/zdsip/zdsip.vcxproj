@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{6480d39a-d786-4c7a-8255-aeac86e3f60c}</ProjectGuid>
+    <RootNamespace>mysipsdk</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>zdsip</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\lib\mysipsdk\x86</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\lib\zdsip\x64</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_WINDOWS;GB28181_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\sip;..\include\pjsip;.\;..\include;.\xml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\lib\pjsip\x86;..\lib\poco\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;pjlib-i386-Win32-vc11-Debug.lib;pjlib-util-i386-Win32-vc11-Debug.lib;pjmedia-i386-Win32-vc11-Debug.lib;pjsip-core-i386-Win32-vc11-Debug.lib;pjsip-ua-i386-Win32-vc11-Debug.lib;pjsua-lib-i386-Win32-vc11-Debug.lib;legacy_stdio_definitions.lib;PocoXML.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;GB28181_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\sip;..\..\include;..\..\include\pjsip;.\xml;.;..\..\include\tinyXml\inlcude;..\jsoncpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\lib\tinyXml\x86;..\..\lib\pjsip\x86;..\..\lib\jsoncpp\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;pjlib-i386-Win32-vc11-Release.lib;pjlib-util-i386-Win32-vc11-Release.lib;pjmedia-i386-Win32-vc11-Release.lib;pjsip-core-i386-Win32-vc11-Release.lib;pjsip-ua-i386-Win32-vc11-Release.lib;pjsua-lib-i386-Win32-vc11-Release.lib;legacy_stdio_definitions.lib;tinyXml.lib;jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;ZD_SIP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>.\sip;.\xml;.;..\..\ext\tinyXml\include;..\..\ext\pjsip\include;..\..\ext\jsoncpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\ext\tinyXml\lib\windows\x64;..\..\ext\pjsip\lib\windows\x64;..\..\ext\jsoncpp\lib\windows\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ws2_32.lib;pjlib-util-x86_64-x64-vc14-Release.lib;pjlib-x86_64-x64-vc14-Release.lib;pjmedia-x86_64-x64-vc14-Release.lib;pjsip-core-x86_64-x64-vc14-Release.lib;pjsip-ua-x86_64-x64-vc14-Release.lib;pjsua-lib-x86_64-x64-vc14-Release.lib;pjsip-simple-x86_64-x64-vc14-Release.lib;legacy_stdio_definitions.lib;tinyXml.lib;jsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(OutDir)*.dll" ..\..\bin\ /Y</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="SipInterface.cpp" />
+    <ClCompile Include="GBDeviceConfig.cpp" />
+    <ClCompile Include="GBDeviceControl.cpp" />
+    <ClCompile Include="sip\ZDAlarmHandler.cpp" />
+    <ClCompile Include="sip\ZDByeHandler.cpp" />
+    <ClCompile Include="sip\ZDCatalogRecvHandler.cpp" />
+    <ClCompile Include="sip\ZDDeviceConfigHandler.cpp" />
+    <ClCompile Include="sip\ZDDeviceInfoHandler.cpp" />
+    <ClCompile Include="sip\ZDDeviceStatusHandler.cpp" />
+    <ClCompile Include="sip\ZDDownloadHandler.cpp" />
+    <ClCompile Include="sip\ZDEventHandler.cpp" />
+    <ClCompile Include="sip\ZDGBDeviceManager.cpp" />
+    <ClCompile Include="sip\ZDInviteHandler.cpp" />
+    <ClCompile Include="sip\ZDKeepAliveHandler.cpp" />
+    <ClCompile Include="sip\ZDRecordInfoHandler.cpp" />
+    <ClCompile Include="sip\ZDRegisterHandler.cpp" />
+    <ClCompile Include="sip\ZDSipContext.cpp" />
+    <ClCompile Include="sip\ZDSipMedia.cpp" />
+    <ClCompile Include="sip\ZDSipModule.cpp" />
+    <ClCompile Include="sip\ZDVoiceBroadcastHandler.cpp" />
+    <ClCompile Include="xml\ZDDynamicStruct.cpp" />
+    <ClCompile Include="xml\ZDXmlParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SipInterface.h" />
+    <ClInclude Include="GBDeviceConfig.h" />
+    <ClInclude Include="GBDeviceControl.h" />
+    <ClInclude Include="SipSDKPublic.h" />
+    <ClInclude Include="sip\ZDAlarmHandler.h" />
+    <ClInclude Include="sip\ZDByeHandler.h" />
+    <ClInclude Include="sip\ZDDeviceConfigHandler.h" />
+    <ClInclude Include="sip\ZDDeviceStatusHandler.h" />
+    <ClInclude Include="sip\ZDDownloadHandler.h" />
+    <ClInclude Include="sip\ZDInviteHandler.h" />
+    <ClInclude Include="sip\ZDRecordInfoHandler.h" />
+    <ClInclude Include="sip\ZDSipInfo.h" />
+    <ClInclude Include="sip\ZDCatalogRecvHandler.h" />
+    <ClInclude Include="sip\ZDDeviceInfoHandler.h" />
+    <ClInclude Include="sip\ZDGBDevice.h" />
+    <ClInclude Include="sip\ZDEventHandler.h" />
+    <ClInclude Include="sip\ZDGBDeviceManager.h" />
+    <ClInclude Include="sip\ZDKeepAliveHandler.h" />
+    <ClInclude Include="sip\ZDRegisterHandler.h" />
+    <ClInclude Include="sip\ZDSip.h" />
+    <ClInclude Include="sip\ZDSipContext.h" />
+    <ClInclude Include="sip\ZDSipHeader.h" />
+    <ClInclude Include="sip\ZDSipMedia.h" />
+    <ClInclude Include="sip\ZDSipModule.h" />
+    <ClInclude Include="sip\ZDVoiceBroadcastHandler.h" />
+    <ClInclude Include="xml\ZDDynamicStruct.h" />
+    <ClInclude Include="xml\ZDXmlParser.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
